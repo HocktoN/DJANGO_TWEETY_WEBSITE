@@ -1,0 +1,88 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+	<div class="all-title-box">
+        
+		<div class="container text-center">
+			<h1 style="color:blue">TWEETY</h1>
+		</div>
+	</div>
+    {% if user.is_authenticated%}
+    <div class="row">
+        <div class="offset-xl-2 col-xl-8 col-md-12 col-sm-12">
+
+            {% if messages %}
+                {% for message in messages%}
+                <div class="alert alert-succes{{message.tags}}">
+                    {{message}}
+                </div>
+                {% endfor %}
+
+            {% endif %}
+
+            <div class="contact_form">
+                <div id="message"></div>
+                <form action="{% url 'paylas' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-outline">
+                        <input type="text" name="icerik" id="typeText" class="form-control" placeholder = "Ne düşünüyorsun?" />
+                        <label class="form-label" for="typeText">Text input</label>
+                      </div>
+
+                        {% csrf_token %}
+
+                        <label class="form-label" for="customFile">Default file input example</label>
+                        <input type="file" name="image" class="form-control" id="customFile" />
+
+                            <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">HERKESLE PAYLAŞ!</button>
+                            <input type="hidden" name="user_id" value="{{user.id}}">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!-- end col -->
+    </div><!-- end row -->
+    {% endif %}
+
+	
+    <div id="contact" class="section wb">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>"{{user.username}}" TWEETY PROFİLİNE HOŞGELDİN!!!</h3>
+                <h2>PAYLAŞIMLARINI AŞAĞIDA GÖRÜNTÜLEYEBİLİRSİN!</h2>
+            </div><!-- end title -->
+
+            
+
+            {% for gonderi in gonderis %}
+            <div class="col-lg-6 col-md-6 col-12 mb-5">
+                <div class="course-item">
+                   
+                    <div class="course-br">
+                        <div class="course-title">
+                            <h2><a href="#" title="">{{user.username}}</a></h2>
+                        </div>
+                        
+                        <div class="course-desc">
+                            <p>{{gonderi.icerik | truncatechars:200}}</p>
+                        </div>
+                        <div class="image-blog">
+                            <img src="{{gonderi.image.url}}" alt="" class="img-fluid">
+                        </div>
+
+                    </div>
+                    <div class="course-meta-bot">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- end col -->
+            {% endfor %}
+        </div><!-- end container -->
+    </div><!-- end section -->
+	
+
+{% endblock %}  
