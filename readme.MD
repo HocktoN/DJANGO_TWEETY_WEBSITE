@@ -7,7 +7,7 @@
 ### Anasayfada 'search' özelliği ile gönderi içeriklerine göre arama yapılabilir.
 ### Her zaman son atılan gönderi en üstte görünür.
 ### Gönderilerle yüklenen fotoğraflar 'media' klasöründe saklanır.
-## NOT: Template dosyaları hazır dosyaların kesilmesi/düzenlenmesiyle oluşturulmuştur.
+## NOT: Template dosyaları hazır dosyaları keserek/düzenleyerek oluşturdum. Backend kısmı tamamen bana aittir.
 ## - BACKEND OLARAK PROJENİN İÇERDİĞİ BAŞLICA ÖZELLİKLER
 
 - # Register 
