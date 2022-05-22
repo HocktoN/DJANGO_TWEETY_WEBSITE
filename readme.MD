@@ -10,18 +10,18 @@
 ## NOT: Template dosyaları hazır dosyaların kesilmesi/düzenlenmesiyle oluşturulmuştur.
 ## - BACKEND OLARAK PROJENİN İÇERDİĞİ BAŞLICA ÖZELLİKLER
 
-- Register 
+- # Register 
 ![register](register.jpg)
 
-- Login
+- # Login
 ![login](login.jpg)
 
-- Anasayfa
+- # Anasayfa
 ![homepage](anasyf.jpg)
 ![homepage2](anasayfa2.jpg)
 
-- Profile
+- # Profile
 ![profile](profile.jpg)
 
-- Paylaşım Yapma
+- # Paylaşım Yapma
 ![share](gonderi_paylas.jpg)
